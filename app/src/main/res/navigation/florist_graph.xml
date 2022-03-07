@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/florist_graph"
+    app:startDestination="@id/homeFloristFragment">
+
+    <fragment
+        android:id="@+id/addFlowerFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.florist.AddFlowerFragment"
+        android:label="fragment_add_flower"
+        tools:layout="@layout/fragment_add_flower" />
+    <fragment
+        android:id="@+id/profileFloristFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.florist.ProfileFloristFragment"
+        android:label="fragment_profile_florist"
+        tools:layout="@layout/fragment_profile_florist" />
+    <fragment
+        android:id="@+id/homeFloristFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.florist.HomeFloristFragment"
+        android:label="HomeFloristFragment" />
+</navigation>
