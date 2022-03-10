@@ -1,5 +1,7 @@
 package com.neobis.deliveryemployee.app.fragments.florist
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,9 +37,8 @@ class MainFloristFragment : BaseFragment<FragmentMainFloristBinding>() {
     }
 
     private fun showAddPlantBotttomSheet() {
-        val bottomSheetDialog = BottomSheetDialog(requireContext());
-        bottomSheetDialog.setContentView(R.layout.fragment_add_flower)
-        bottomSheetDialog.show()
+        val modalbottomSheetFragment = AddFlowerFragment()
+        modalbottomSheetFragment.show(childFragmentManager, modalbottomSheetFragment.tag)
     }
 
 

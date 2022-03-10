@@ -32,4 +32,5 @@ abstract class BaseFragment<Binding : ViewBinding> : Fragment() {
 
     abstract fun inflateView(inflater: LayoutInflater, container: ViewGroup?): Binding?
 
+
 }

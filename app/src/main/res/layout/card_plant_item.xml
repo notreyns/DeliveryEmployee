@@ -14,10 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="133dp">
 
-        <androidx.cardview.widget.CardView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
-            app:cardBackgroundColor="@color/img_bg_green"
-            app:cardCornerRadius="20dp"
+            android:background="@drawable/plant_image_bg"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/img_divider"
             android:layout_height="match_parent">
@@ -28,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/example_plant"/>
-        </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/img_divider"

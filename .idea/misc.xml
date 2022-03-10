@@ -6,6 +6,7 @@
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1295" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable/bottom_item_color.xml" value="0.2055" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable/bottom_sheet_bg.xml" value="0.1295" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable/dialog_bg.xml" value="0.1295" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable/ic_add_fab.xml" value="0.1815" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable/ic_addphoto.xml" value="0.1295" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable/ic_home.xml" value="0.163" />
@@ -14,11 +15,15 @@
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable/ic_profile.xml" value="0.2055" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable/login_button_bg.xml" value="0.19" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable/login_input_bg.xml" value="0.19" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable/plant_image_bg.xml" value="0.1295" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/card_plant_item.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/dialog_success_plantedition.xml" value="0.21041666666666667" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/dialog_success_platncreation.xml" value="0.23854166666666668" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/dropdown_item.xml" value="0.16875" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_add_flower.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_edit_flower.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_flower_details.xml" value="0.23854166666666668" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_home_florist.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />

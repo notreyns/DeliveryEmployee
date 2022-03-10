@@ -18,5 +18,22 @@
     <fragment
         android:id="@+id/homeFloristFragment"
         android:name="com.neobis.deliveryemployee.app.fragments.florist.HomeFloristFragment"
-        android:label="HomeFloristFragment" />
+        android:label="HomeFloristFragment" >
+        <action
+            android:id="@+id/action_homeFloristFragment_to_flowerDetailsFragment"
+            app:destination="@id/flowerDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/flowerDetailsFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.florist.FlowerDetailsFragment"
+        android:label="fragment_flower_details"
+        tools:layout="@layout/fragment_flower_details" >
+        <action
+            android:id="@+id/action_flowerDetailsFragment_to_editFlowerFragment"
+            app:destination="@id/editFlowerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFlowerFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.florist.EditFlowerFragment"
+        android:label="EditFlowerFragment" />
 </navigation>
