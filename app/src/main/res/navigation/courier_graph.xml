@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/courier_graph"
+    app:startDestination="@id/profileCourierFragment">
+
+    <fragment
+        android:id="@+id/profileCourierFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.ProfileCourierFragment"
+        android:label="fragment_profile_courier"
+        tools:layout="@layout/fragment_profile_courier" />
+    <fragment
+        android:id="@+id/historyCourierFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.history.HistoryCourierFragment"
+        android:label="HistoryCourierFragment" />
+    <fragment
+        android:id="@+id/homeCourierFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.HomeCourierFragment"
+        android:label="HomeCourierFragment" />
+</navigation>

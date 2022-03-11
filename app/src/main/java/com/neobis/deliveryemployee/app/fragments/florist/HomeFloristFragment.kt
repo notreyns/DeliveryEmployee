@@ -5,12 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
-import com.neobis.deliveryemployee.app.fragments.adapters.PlantListAdapter
+import com.neobis.deliveryemployee.app.fragments.florist.adapters.PlantListAdapter
 import com.neobis.deliveryemployee.databinding.FragmentHomeFloristBinding
-import com.neobis.deliveryemployee.databinding.FragmentMainFloristBinding
 import com.neobis.deliveryemployee.domain.models.PlantItemModel
 
 class HomeFloristFragment : BaseFragment<FragmentHomeFloristBinding>() {

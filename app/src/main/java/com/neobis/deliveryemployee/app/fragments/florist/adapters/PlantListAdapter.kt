@@ -1,7 +1,6 @@
-package com.neobis.deliveryemployee.app.fragments.adapters
+package com.neobis.deliveryemployee.app.fragments.florist.adapters
 
 import android.text.Html
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

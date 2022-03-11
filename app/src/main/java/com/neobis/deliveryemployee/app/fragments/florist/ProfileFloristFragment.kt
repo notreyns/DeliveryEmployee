@@ -4,18 +4,41 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import android.widget.ArrayAdapter
 import com.neobis.deliveryemployee.R
+import com.neobis.deliveryemployee.app.base.BaseFragment
+import com.neobis.deliveryemployee.databinding.FragmentProfileFloristBinding
 
 
-class ProfileFloristFragment : Fragment() {
+class ProfileFloristFragment : BaseFragment<FragmentProfileFloristBinding>() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_florist, container, false)
+
+    override fun inflateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentProfileFloristBinding? {
+        return FragmentProfileFloristBinding.inflate(inflater, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //setupSpinner()
+        setupDropdown()
+    }
+
+    private fun setupDropdown() {
+        val months = resources.getStringArray(R.array.month_dropdown)
+        val dropdownAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, months)
+        binding.autoCompleteDropDown.setAdapter(dropdownAdapter)
+    }
+
+    /*private fun setupSpinner() {
+        val spinner = binding.incomeSpinner
+        val adapter = ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.month_dropdown, R.layout.dropdown_item
+        )
+        spinner.adapter = adapter
+    }*/
 
 }

@@ -34,7 +34,6 @@ class AddFlowerFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val categories = resources.getStringArray(R.array.categ_dropdown)
-
         val dropdownAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, categories)
         binding.autoCompleteDropDown.setAdapter(dropdownAdapter)
         binding.addplantBtn.setOnClickListener {

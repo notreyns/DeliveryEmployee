@@ -13,9 +13,16 @@
         <action
             android:id="@+id/action_loginFragment_to_mainFloristFragment"
             app:destination="@id/mainFloristFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainCourierFragment"
+            app:destination="@id/mainCourierFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFloristFragment"
         android:name="com.neobis.deliveryemployee.app.fragments.florist.MainFloristFragment"
         android:label="MainFloristFragment" />
+    <fragment
+        android:id="@+id/mainCourierFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.MainCourierFragment"
+        android:label="MainCourierFragment" />
 </navigation>
