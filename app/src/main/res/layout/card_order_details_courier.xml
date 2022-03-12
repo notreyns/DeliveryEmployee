@@ -46,7 +46,7 @@
                 android:id="@+id/cur_order_customer_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Андрей Адреев"
+                android:text="Андрей Андреев"
                 android:layout_marginTop="3dp"
                 app:layout_constraintStart_toStartOf="@id/incomeleft_guideline"
                 app:layout_constraintTop_toBottomOf="@+id/month_income_hint" />

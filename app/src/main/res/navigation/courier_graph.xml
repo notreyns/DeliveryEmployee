@@ -9,7 +9,7 @@
         android:id="@+id/profileCourierFragment"
         android:name="com.neobis.deliveryemployee.app.fragments.courier.profile.ProfileCourierFragment"
         android:label="fragment_profile_courier"
-        tools:layout="@layout/fragment_profile_courier" />
+        tools:layout="@layout/fragment_profile_florist" />
     <fragment
         android:id="@+id/historyCourierFragment"
         android:name="com.neobis.deliveryemployee.app.fragments.courier.history.HistoryCourierFragment"
@@ -38,4 +38,8 @@
         android:id="@+id/inprocessOrderFragment"
         android:name="com.neobis.deliveryemployee.app.fragments.courier.orderstages.InprocessOrderFragment"
         android:label="InprocessOrderFragment" />
+    <fragment
+        android:id="@+id/completedOrderFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.orderstages.CompletedOrderFragment"
+        android:label="CompletedOrderFragment" />
 </navigation>

@@ -14,7 +14,7 @@
         android:id="@+id/profileFloristFragment"
         android:name="com.neobis.deliveryemployee.app.fragments.florist.ProfileFloristFragment"
         android:label="fragment_profile_florist"
-        tools:layout="@layout/fragment_profile_florist" />
+        tools:layout="@layout/fragment_profile_courier" />
     <fragment
         android:id="@+id/homeFloristFragment"
         android:name="com.neobis.deliveryemployee.app.fragments.florist.HomeFloristFragment"

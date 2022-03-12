@@ -5,6 +5,7 @@
     <string name="category_plant"><b>Категория: </b> %s</string>
     <string name="quantity_plant"><b>Количество: </b> %s</string>
     <string name="details"><u>Детали заказа</u></string>
+    <string name="deliver_address"><b>Доставлено: </b>м-р. Кок-Жар, ул 7-апреля 2/13</string>
     <string-array name="categ_dropdown">
         <item>Суккуленты</item>
         <item>Декоративно-лиственные</item>
