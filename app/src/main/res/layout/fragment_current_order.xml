@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_card"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_marginHorizontal="16dp"
+        app:cardBackgroundColor="@color/bg_beige"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cur_order_divider"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingTop="30dp"
+            android:paddingBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/incomeleft_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp"/>
+
+            <TextView
+                android:textAppearance="@style/plantDetailsHints700"
+                android:id="@+id/month_createdplants_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Заказ №109678"
+                android:textStyle="bold"
+                android:textColor="@color/main_green"
+                android:textSize="19sp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/incomeleft_guideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:textAppearance="@style/plantDetailsHints700"
+                android:id="@+id/month_nadbavka_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Комнатное растение"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toTopOf="@+id/month_income_hint"
+                app:layout_constraintStart_toStartOf="@id/incomeleft_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/month_createdplants_hint" />
+
+            <TextView
+                android:id="@+id/month_income_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Покупатель"
+                android:textAppearance="@style/plantDetailsHints700"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/incomeleft_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/month_nadbavka_hint" />
+
+            <TextView
+                android:textAppearance="@style/plantDetailsEdittext400"
+                android:textSize="16sp"
+                android:id="@+id/cur_order_customer_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Андрей Адреев"
+                android:layout_marginTop="3dp"
+                app:layout_constraintStart_toStartOf="@id/incomeleft_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/month_income_hint" />
+            <TextView
+                android:id="@+id/curorder_customerphone_hint_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Номер телефона"
+                android:textAppearance="@style/plantDetailsHints700"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="@id/incomeleft_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/cur_order_customer_tv" />
+            <TextView
+                android:id="@+id/curorder_customerphone_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0550 11 22 33"
+                android:textAppearance="@style/plantDetailsHints700"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:layout_marginTop="3dp"
+                app:layout_constraintStart_toStartOf="@id/incomeleft_guideline"
+                app:layout_constraintTop_toBottomOf="@id/curorder_customerphone_hint_tv" />
+            <TextView
+                android:id="@+id/curorder_customeradress_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Советская 191"
+                android:textAppearance="@style/plantDetailsHints700"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintStart_toStartOf="@id/incomeleft_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/curorder_customerphone_tv" />
+            <LinearLayout
+                android:id="@+id/curorder_ellipses_div"
+                android:layout_width="4dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                app:layout_constraintTop_toBottomOf="@+id/curorder_customeradress_tv"
+                app:layout_constraintStart_toStartOf="@id/incomeleft_guideline"
+                app:layout_constraintHorizontal_bias="0.01"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_ellipse"/>
+                <ImageView
+                    android:layout_marginBottom="5dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_ellipse"/>
+                <ImageView
+                    android:layout_marginBottom="5dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_ellipse"/>
+                <ImageView
+                    android:layout_marginBottom="5dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_ellipse"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/plantDetailsHints700"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="м-р. Кок-Жар, ул 7-апреля 2/13"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/curorder_ellipses_div"
+                app:layout_constraintStart_toStartOf="@id/incomeleft_guideline"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintEnd_toEndOf="parent"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="890 coм"
+                android:textAppearance="@style/plantDetailsHints700"
+                android:textStyle="bold"
+                android:textColor="@color/main_green"
+                android:textSize="19sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="29dp"/>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cur_order_divider"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

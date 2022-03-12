@@ -1,4 +1,4 @@
-package com.neobis.deliveryemployee.app.fragments.courier.history
+package com.neobis.deliveryemployee.app.fragments.courier
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,19 +20,7 @@ class HistoryCourierFragment : BaseFragment<FragmentHistoryCourierBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        /*val viewPager = binding.historyViewpager
-        val tabLayout = binding.historyTablay
 
-        val adapter = HistoryViewPager(childFragmentManager, lifecycle)
-        viewPager.adapter = adapter
-
-        val categoryArray = arrayOf(
-            "Текущий заказ",
-            "Завершенные заказы",
-        )
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = categoryArray[position]
-        }.attach()*/
     }
 
 

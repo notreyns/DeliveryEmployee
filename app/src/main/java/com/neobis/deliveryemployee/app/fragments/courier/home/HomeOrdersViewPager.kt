@@ -1,13 +1,13 @@
-package com.neobis.deliveryemployee.app.fragments.courier.history
+package com.neobis.deliveryemployee.app.fragments.courier.home
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-/*
 
 
-class HistoryViewPager(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
+
+class HomeOrdersViewPager(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
 
     override fun getItemCount(): Int {
@@ -17,7 +17,7 @@ class HistoryViewPager(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     override fun createFragment(position: Int): Fragment {
         when (position) {
             0 -> return CurrentOrderFragment()
-            1 -> return FinishedOrdersFragment()
+            1 -> return NewOrdersFragment()
         }
         return CurrentOrderFragment()
     }
@@ -25,4 +25,4 @@ class HistoryViewPager(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     companion object{
         const val NUM_TABS =2
     }
-}*/
+}
