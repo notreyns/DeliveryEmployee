@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
 import com.neobis.deliveryemployee.databinding.FragmentUnaccepterOrderBinding
@@ -26,6 +27,16 @@ class UnacceptedOrderFragment : BaseFragment<FragmentUnaccepterOrderBinding>() {
         binding.acceptOrderBtn.setOnClickListener {
             findNavController().navigate(R.id.inprocessOrderFragment)
         }
+        binding.openDetailsBottom.setOnClickListener {
+            showOrderDetailsBottomSheet()
+        }
+    }
+
+    private fun showOrderDetailsBottomSheet() {
+        val bottomSheetDialog = BottomSheetDialog(requireContext())
+        bottomSheetDialog.setContentView(R.layout.bottomsheet_plantslist_courier)
+        bottomSheetDialog.show()
+
     }
 
 }
