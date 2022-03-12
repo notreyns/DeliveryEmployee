@@ -1,4 +1,4 @@
-package com.neobis.deliveryemployee.app.fragments.courier
+package com.neobis.deliveryemployee.app.fragments.courier.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

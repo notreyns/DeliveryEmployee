@@ -7,15 +7,35 @@
 
     <fragment
         android:id="@+id/profileCourierFragment"
-        android:name="com.neobis.deliveryemployee.app.fragments.courier.ProfileCourierFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.profile.ProfileCourierFragment"
         android:label="fragment_profile_courier"
         tools:layout="@layout/fragment_profile_courier" />
     <fragment
         android:id="@+id/historyCourierFragment"
-        android:name="com.neobis.deliveryemployee.app.fragments.courier.HistoryCourierFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.history.HistoryCourierFragment"
         android:label="HistoryCourierFragment" />
     <fragment
         android:id="@+id/homeCourierFragment"
-        android:name="com.neobis.deliveryemployee.app.fragments.courier.HomeCourierFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.home.HomeCourierFragment"
         android:label="HomeCourierFragment" />
+    <fragment
+        android:id="@+id/unacceptedOrderFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.orderstages.UnacceptedOrderFragment"
+        android:label="UnacceptedOrder" />
+    <fragment
+        android:id="@+id/finishOrderFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.orderstages.FinishOrderFragment"
+        android:label="FinishOrderFragment" />
+    <fragment
+        android:id="@+id/getOrderFromFloristFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.orderstages.GetOrderFromFloristFragment"
+        android:label="GetOrderFromFloristFragment" />
+    <fragment
+        android:id="@+id/deliverClientFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.orderstages.DeliverClientFragment"
+        android:label="DeliverClientFragment" />
+    <fragment
+        android:id="@+id/inprocessOrderFragment"
+        android:name="com.neobis.deliveryemployee.app.fragments.courier.orderstages.InprocessOrderFragment"
+        android:label="InprocessOrderFragment" />
 </navigation>

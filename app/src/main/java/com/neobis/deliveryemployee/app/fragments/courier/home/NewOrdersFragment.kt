@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
 import com.neobis.deliveryemployee.app.fragments.courier.adapters.NewOrdersListAdapter
 import com.neobis.deliveryemployee.databinding.FragmentNewOrdersBinding
@@ -57,13 +59,14 @@ class NewOrdersFragment : BaseFragment<FragmentNewOrdersBinding>() {
                 "3500 сом",
                 "12.02.2022"
             ),
-
-
             )
 
         val adapter = NewOrdersListAdapter()
         adapter.orderList = list
         binding.newordersRecview.adapter = adapter
+        adapter.onOrderClickListener = {
+            findNavController().navigate(R.id.unacceptedOrderFragment)
+        }
     }
 
 

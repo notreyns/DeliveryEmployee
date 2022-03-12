@@ -19,24 +19,33 @@
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable/login_input_bg.xml" value="0.19" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/drawable/plant_image_bg.xml" value="0.1295" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/bottomsheet_plantslist_courier.xml" value="0.21197916666666666" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/card_order_details_courier.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/card_plant_item.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/dialog_success_courier_job.xml" value="0.23854166666666668" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/dialog_success_plantedition.xml" value="0.21041666666666667" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/dialog_success_platncreation.xml" value="0.23854166666666668" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/dropdown_item.xml" value="0.16875" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_add_flower.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_current_order.xml" value="0.23854166666666668" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_deliver_client.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_edit_flower.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_finish_order.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_finished_orders.xml" value="0.23854166666666668" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_flower_details.xml" value="0.23854166666666668" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_get_order_from_florist.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_history_courier.xml" value="0.190625" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_home_courier.xml" value="0.190625" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_home_florist.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_inprocess_order.xml" value="0.23854166666666668" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_main_courier.xml" value="0.190625" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_main_florist.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_order_details.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_profile_courier.xml" value="0.190625" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_profile_florist.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/fragment_unaccepter_order.xml" value="0.17407407407407408" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/new_courier_order_item.xml" value="0.14629629629629629" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/simple_spinner_dropdown_item.xml" value="0.16875" />
         <entry key="..\:/AndroidStudioProjects/delivery/DeliveryEmployee/app/src/main/res/layout/simple_spinner_item.xml" value="0.16875" />

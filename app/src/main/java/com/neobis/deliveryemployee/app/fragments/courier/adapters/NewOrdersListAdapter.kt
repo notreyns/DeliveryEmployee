@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.neobis.deliveryemployee.databinding.CardNewCourierOrderItemBinding
 import com.neobis.deliveryemployee.domain.models.CourierNewOrderModel
+import com.neobis.deliveryemployee.domain.models.PlantItemModel
 
 
 class NewOrdersListAdapter : RecyclerView.Adapter<NewOrdersListAdapter.NewOrderItemViewHolder>() {
-
+    var onOrderClickListener: ((CourierNewOrderModel) -> Unit)? = null
 
     var orderList = listOf<CourierNewOrderModel>()
         set(value) {
@@ -34,7 +35,9 @@ class NewOrdersListAdapter : RecyclerView.Adapter<NewOrdersListAdapter.NewOrderI
             curorderCustomeradressTv.text= historyItem.clientAddress
             neworderPrice.text = historyItem.price
 
-
+        }
+        holder.binding.root.setOnClickListener {
+            onOrderClickListener?.invoke(historyItem)
         }
 
     }
