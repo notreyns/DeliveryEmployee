@@ -73,6 +73,7 @@
         app:layout_constraintTop_toBottomOf="@id/addplant_photo_card" />
 
     <EditText
+        android:paddingStart="10dp"
         android:layout_marginTop="10dp"
         android:id="@+id/addname_et"
         android:layout_width="match_parent"
@@ -82,6 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/addname_tv" />
 
     <TextView
+
         android:layout_marginTop="20dp"
         app:layout_constraintHorizontal_bias="0"
         android:id="@+id/addcateg_tv"
@@ -129,6 +131,7 @@
         app:layout_constraintTop_toBottomOf="@id/addcateg_dropdown" />
 
     <EditText
+        android:paddingStart="10dp"
         android:layout_marginTop="10dp"
         android:id="@+id/addprice_et"
         android:layout_width="match_parent"
@@ -152,6 +155,7 @@
         app:layout_constraintTop_toBottomOf="@id/addprice_et" />
 
     <EditText
+        android:paddingStart="10dp"
         android:layout_marginTop="10dp"
         android:lines="7"
         android:inputType="textMultiLine"

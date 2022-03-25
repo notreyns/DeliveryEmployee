@@ -23,7 +23,8 @@ class InprocessOrderFragment: BaseFragment<FragmentInprocessOrderBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.unnaccepterOrderTitle.setNavigationOnClickListener {
+
+        binding.unnaccepterOrderTitle.setOnClickListener {
             findNavController().navigate(R.id.homeCourierFragment)
         }
         binding.goToFloristBtn.setOnClickListener {

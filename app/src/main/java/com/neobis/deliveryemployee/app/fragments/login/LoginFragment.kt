@@ -7,10 +7,18 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
+import com.neobis.deliveryemployee.app.base.BaseViewModel
 import com.neobis.deliveryemployee.databinding.FragmentLoginBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>() {
+
+    private val viewModel by viewModel<LoginViewModel>()
+
+    override fun provideViewModel(): BaseViewModel? {
+        return viewModel
+    }
 
     override fun inflateView(
         inflater: LayoutInflater,
@@ -23,14 +31,15 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.loginBtn.setOnClickListener{
-            if(binding.passwordEt.text.toString().equals("курьер")){
+        binding.loginBtn.setOnClickListener {
+
+            if (binding.passwordEt.text.toString().equals("курьер")) {
                 findNavController().navigate(R.id.mainCourierFragment)
-            }else{
+            } else {
                 findNavController().navigate(R.id.mainFloristFragment)
             }
-
         }
     }
+
 
 }

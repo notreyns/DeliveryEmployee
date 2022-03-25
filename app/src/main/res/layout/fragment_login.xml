@@ -123,9 +123,9 @@
             android:id="@+id/password_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginHorizontal="50dp"
             android:layout_marginTop="5dp"
+
             android:background="@drawable/login_input_bg"
             app:layout_constraintBottom_toTopOf="@+id/login_btn"
             app:layout_constraintTop_toBottomOf="@+id/password_hint"

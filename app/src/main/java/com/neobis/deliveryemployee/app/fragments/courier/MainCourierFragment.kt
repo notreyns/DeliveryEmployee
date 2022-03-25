@@ -8,9 +8,14 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
+import com.neobis.deliveryemployee.app.base.BaseViewModel
 import com.neobis.deliveryemployee.databinding.FragmentMainCourierBinding
 
 class MainCourierFragment: BaseFragment<FragmentMainCourierBinding>() {
+
+    override fun provideViewModel(): BaseViewModel? {
+        TODO("Not yet implemented")
+    }
     override fun inflateView(
         inflater: LayoutInflater,
         container: ViewGroup?
@@ -24,4 +29,6 @@ class MainCourierFragment: BaseFragment<FragmentMainCourierBinding>() {
         NavigationUI.setupWithNavController(binding.bottomnavigationbar, navController)
 
     }
+
+
 }
