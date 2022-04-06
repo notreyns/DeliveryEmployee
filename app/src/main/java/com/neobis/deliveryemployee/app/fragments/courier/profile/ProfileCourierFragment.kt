@@ -7,10 +7,14 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
+import com.neobis.deliveryemployee.app.base.BaseViewModel
 import com.neobis.deliveryemployee.databinding.FragmentProfileCourierBinding
 
 class ProfileCourierFragment : BaseFragment<FragmentProfileCourierBinding>() {
 
+    override fun provideViewModel(): BaseViewModel? {
+        return null
+    }
 
     override fun inflateView(
         inflater: LayoutInflater,

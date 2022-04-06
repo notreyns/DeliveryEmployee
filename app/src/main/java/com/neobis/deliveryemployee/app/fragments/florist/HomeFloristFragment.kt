@@ -7,11 +7,16 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
+import com.neobis.deliveryemployee.app.base.BaseViewModel
 import com.neobis.deliveryemployee.app.fragments.florist.adapters.PlantListAdapter
 import com.neobis.deliveryemployee.databinding.FragmentHomeFloristBinding
 import com.neobis.deliveryemployee.domain.models.PlantItemModel
 
 class HomeFloristFragment : BaseFragment<FragmentHomeFloristBinding>() {
+
+    override fun provideViewModel(): BaseViewModel? {
+        return null
+    }
 
     private val adapter by lazy {
         PlantListAdapter()
@@ -36,13 +41,13 @@ class HomeFloristFragment : BaseFragment<FragmentHomeFloristBinding>() {
     private fun setupRecyclerView() {
      //   val adapter = PlantListAdapter()
         binding.plantsRecview.adapter = adapter
-        val list = mutableListOf(
+       /* val list = mutableListOf(
             PlantItemModel(R.drawable.example_plant, "Опунция", "Суккуленты",
                 "4530 c", 6),
             PlantItemModel(R.drawable.example_plant, "Опунция", "Суккуленты",
                 "4530 c", 6)
-        )
-        adapter.setList(list)
+        )*/
+       // adapter.setList(list)
 
 
     }

@@ -7,12 +7,16 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
+import com.neobis.deliveryemployee.app.base.BaseViewModel
 import com.neobis.deliveryemployee.app.fragments.courier.adapters.HistoryListAdapter
 import com.neobis.deliveryemployee.databinding.FragmentHistoryCourierBinding
 import com.neobis.deliveryemployee.domain.models.CourierNewOrderModel
 
 
 class HistoryCourierFragment : BaseFragment<FragmentHistoryCourierBinding>() {
+    override fun provideViewModel(): BaseViewModel? {
+        return null
+    }
 
     override fun inflateView(
         inflater: LayoutInflater,
@@ -63,6 +67,8 @@ class HistoryCourierFragment : BaseFragment<FragmentHistoryCourierBinding>() {
             findNavController().navigate(R.id.completedOrderFragment)
         }
     }
+
+
 
 
 }

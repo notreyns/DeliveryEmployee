@@ -9,10 +9,15 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
+import com.neobis.deliveryemployee.app.base.BaseViewModel
 import com.neobis.deliveryemployee.databinding.FragmentInprocessOrderBinding
 import com.neobis.deliveryemployee.databinding.FragmentUnaccepterOrderBinding
 
 class InprocessOrderFragment: BaseFragment<FragmentInprocessOrderBinding>() {
+
+    override fun provideViewModel(): BaseViewModel? {
+        return null
+    }
 
     override fun inflateView(
         inflater: LayoutInflater,

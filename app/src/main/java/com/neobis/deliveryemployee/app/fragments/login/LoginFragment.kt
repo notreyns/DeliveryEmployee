@@ -32,13 +32,18 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.loginBtn.setOnClickListener {
-
-            if (binding.passwordEt.text.toString().equals("курьер")) {
+            viewModel.login(binding.phoneEt.text.toString(), binding.passwordEt.text.toString())
+        }
+        viewModel.userRole.observe(viewLifecycleOwner){
+            if (it == null) {
+                findNavController().navigate(R.id.loginFragment)
+            } else if (it == "Курьер") {
                 findNavController().navigate(R.id.mainCourierFragment)
-            } else {
+            } else if (it == "Флорист") {
                 findNavController().navigate(R.id.mainFloristFragment)
             }
         }
+
     }
 
 

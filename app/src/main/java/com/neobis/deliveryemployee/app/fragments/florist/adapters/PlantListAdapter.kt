@@ -38,15 +38,15 @@ class PlantListAdapter : RecyclerView.Adapter<PlantListAdapter.PlantItemViewHold
                 cardPlantCateg.context.getString(R.string.category_plant), plantItem.category
             )
             cardPlantName.text = plantItem.name
-            cardPlantPrice.text = plantItem.price
+            cardPlantPrice.text = plantItem.price.toString()
             val quantityStr = String.format(
                 cardPlantQuantity.context.getString(R.string.quantity_plant),
                 plantItem.quantity
             )
 
             cardPlantQuantity.text = Html.fromHtml(quantityStr)
-            Glide.with(holder.itemView.context).load(plantItem.image)
-                .into(holder.binding.cardPlantImg)
+          /*  Glide.with(holder.itemView.context).load(plantItem.image)
+                .into(holder.binding.cardPlantImg)*/
         }
 
         holder.itemView.setOnClickListener {

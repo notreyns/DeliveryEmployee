@@ -1,9 +1,15 @@
 package com.neobis.deliveryemployee.domain.models
 
+import android.net.Uri
+
+
 data class PlantItemModel(
-    var image: Int,
+    var uri: Uri,
     var name: String,
-    var category: String,
-    var price: String,
-    var quantity: Int
+    var category: Int,
+    var quantity: Int,
+    var price: Int,
+    var description: String,
+
+
 )

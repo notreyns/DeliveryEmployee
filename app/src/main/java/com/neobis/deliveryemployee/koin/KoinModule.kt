@@ -8,8 +8,14 @@ import com.neobis.deliveryclient.data.rest.client.RestClient
 import com.neobis.deliveryclient.data.rest.client.RestClientImpl
 import com.neobis.deliveryclient.domain.interactor.repository.LoginRepository
 import com.neobis.deliveryclient.domain.interactor.usecase.login.LoginUseCase
+import com.neobis.deliveryemployee.app.fragments.florist.PlantViewModel
 import com.neobis.deliveryemployee.app.fragments.login.LoginViewModel
+import com.neobis.deliveryemployee.data.repository.PlantsRepositoryImpl
+import com.neobis.deliveryemployee.domain.interactor.repository.PlantsRepository
+import com.neobis.deliveryemployee.domain.interactor.usecase.florist.CreatePlantUseCase
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 
@@ -18,10 +24,11 @@ val retrofitModule = module {
 }
 
 val preferencesModule = module {
-    single {  }
+    single { provideSharedPreferences(androidContext()) }
 }
 
 val repositoryModule = module {
+
     single { tokenDataMapper() }
 
     single {
@@ -30,30 +37,45 @@ val repositoryModule = module {
             mapper = tokenDataMapper()
         )
     }
+    single {
+        providePlantRepository(
+            restClient = get(),
+        )
+    }
+
 
 }
 
 val viewModels = module {
 
     factory { provideLoginUseCase(repository = get()) }
-    viewModel { LoginViewModel(loginUseCase = get() ) }
+    factory { provideCreatePlantUseCase(repository = get()) }
+    single { provideSharedPreferences(androidContext()) }
+
+    viewModel { LoginViewModel(loginUseCase = get(), get()) }
+    viewModel { PlantViewModel(createPlantUseCase = get()) }
 }
 
 fun provideLoginUseCase(repository: LoginRepository) = LoginUseCase(repository)
+fun provideCreatePlantUseCase(repository: PlantsRepository) = CreatePlantUseCase(repository)
 fun provideSharedPreferences(context: Context) = LocalDatabase(context)
 
 fun provideUserRepository(
     restClient: RestClient,
     mapper: JWTTokenMapper
-): LoginRepository{
+): LoginRepository {
     return UserRepositoryImpl(restClient, mapper)
+}
+
+fun providePlantRepository(
+    restClient: RestClient,
+): PlantsRepository {
+    return PlantsRepositoryImpl(restClient)
 }
 
 fun provideRestClient(): RestClient {
     return RestClientImpl()
 }
-
-
 
 
 fun tokenDataMapper() = JWTTokenMapper()

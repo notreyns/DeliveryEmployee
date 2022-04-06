@@ -7,7 +7,6 @@ import com.neobis.deliveryclient.data.rest.client.RestClient
 import com.neobis.deliveryclient.domain.interactor.model.JWTTokenModel
 import com.neobis.deliveryclient.domain.interactor.model.UserModel
 import com.neobis.deliveryclient.domain.interactor.repository.LoginRepository
-import com.neobis.deliveryclient.domain.interactor.result.CompletableResult
 
 class UserRepositoryImpl(
     private val restClient: RestClient,
@@ -18,9 +17,9 @@ class UserRepositoryImpl(
         return restClient.userApiService().loginUser(userModel!!.phone, userModel.password).map {
             mapper.transform(it)
         }
-
     }
 
-
-
+    override fun refreshToken(refresh: String?): Result<String> {
+        return restClient.userApiService().refreshToken(refresh!!)
+    }
 }

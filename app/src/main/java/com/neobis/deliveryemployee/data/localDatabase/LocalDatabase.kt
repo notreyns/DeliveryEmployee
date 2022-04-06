@@ -2,8 +2,9 @@ package com.example.evergreenclient.data.localDatabase
 
 import android.content.Context
 import android.content.SharedPreferences
+import org.koin.core.component.KoinComponent
 
-class LocalDatabase(context : Context) {
+class LocalDatabase(context : Context) : KoinComponent {
 
     private val prefs: SharedPreferences =
         context.getSharedPreferences("TestApp", Context.MODE_PRIVATE)
@@ -46,7 +47,7 @@ class LocalDatabase(context : Context) {
     }
 
     fun clearData() {
-        prefs.edit().clear().apply()
-       // editor.clear()
+        editor.clear().apply()
+
     }
 }

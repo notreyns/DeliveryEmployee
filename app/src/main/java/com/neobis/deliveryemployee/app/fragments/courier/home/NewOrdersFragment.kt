@@ -7,12 +7,16 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
+import com.neobis.deliveryemployee.app.base.BaseViewModel
 import com.neobis.deliveryemployee.app.fragments.courier.adapters.NewOrdersListAdapter
 import com.neobis.deliveryemployee.databinding.FragmentNewOrdersBinding
 import com.neobis.deliveryemployee.domain.models.CourierNewOrderModel
 
 class NewOrdersFragment : BaseFragment<FragmentNewOrdersBinding>() {
 
+    override fun provideViewModel(): BaseViewModel? {
+        return null
+    }
 
     override fun inflateView(
         inflater: LayoutInflater,

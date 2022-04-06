@@ -6,4 +6,5 @@ import com.neobis.deliveryclient.domain.interactor.model.UserModel
 
 interface LoginRepository {
     fun loginUser(userModel: UserModel?) : Result<JWTTokenModel>
+    fun refreshToken(refresh: String?) : Result<String>
 }

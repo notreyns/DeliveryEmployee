@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
+import com.neobis.deliveryemployee.app.base.BaseViewModel
 import com.neobis.deliveryemployee.databinding.DialogSuccessPlanteditionBinding
 import com.neobis.deliveryemployee.databinding.FragmentEditFlowerBinding
 
@@ -17,6 +18,9 @@ import com.neobis.deliveryemployee.databinding.FragmentEditFlowerBinding
 class EditFlowerFragment : BaseFragment<FragmentEditFlowerBinding>() {
 
 
+    override fun provideViewModel(): BaseViewModel? {
+        return null
+    }
     override fun inflateView(
         inflater: LayoutInflater,
         container: ViewGroup?

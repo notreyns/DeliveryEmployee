@@ -6,10 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.tabs.TabLayoutMediator
 import com.neobis.deliveryemployee.app.base.BaseFragment
+import com.neobis.deliveryemployee.app.base.BaseViewModel
 import com.neobis.deliveryemployee.app.fragments.courier.home.HomeOrdersViewPager
 import com.neobis.deliveryemployee.databinding.FragmentHomeCourierBinding
 
 class HomeCourierFragment: BaseFragment<FragmentHomeCourierBinding>() {
+    override fun provideViewModel(): BaseViewModel? {
+        return null
+    }
+
     override fun inflateView(
         inflater: LayoutInflater,
         container: ViewGroup?

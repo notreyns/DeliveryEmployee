@@ -91,6 +91,7 @@
                 android:background="@color/black" />
 
             <EditText
+                android:id="@+id/phone_et"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -134,9 +135,10 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_et"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:focusable="true"
+                android:gravity="center_vertical"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:textSize="18sp"

@@ -14,7 +14,7 @@ import com.neobis.deliveryemployee.databinding.FragmentMainCourierBinding
 class MainCourierFragment: BaseFragment<FragmentMainCourierBinding>() {
 
     override fun provideViewModel(): BaseViewModel? {
-        TODO("Not yet implemented")
+        return null
     }
     override fun inflateView(
         inflater: LayoutInflater,

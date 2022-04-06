@@ -9,10 +9,15 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
+import com.neobis.deliveryemployee.app.base.BaseViewModel
 import com.neobis.deliveryemployee.databinding.FragmentDeliverClientBinding
 import com.neobis.deliveryemployee.databinding.FragmentGetOrderFromFloristBinding
 
 class DeliverClientFragment: BaseFragment<FragmentDeliverClientBinding>() {
+
+    override fun provideViewModel(): BaseViewModel? {
+        return null
+    }
 
     override fun inflateView(
         inflater: LayoutInflater,

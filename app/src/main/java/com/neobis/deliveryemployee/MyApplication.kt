@@ -1,6 +1,8 @@
 package com.neobis.deliveryemployee
 
 import android.app.Application
+import android.content.Context
+import com.neobis.deliveryemployee.koin.preferencesModule
 
 import com.neobis.deliveryemployee.koin.repositoryModule
 import com.neobis.deliveryemployee.koin.retrofitModule
@@ -14,8 +16,12 @@ class MyApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         startKoin {
-            modules(listOf(retrofitModule, repositoryModule, viewModels))
+            modules(listOf(retrofitModule, repositoryModule, viewModels, preferencesModule))
             androidContext(this@MyApplication)
         }
+
+
+
     }
+
 }

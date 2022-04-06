@@ -9,11 +9,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseFragment
+import com.neobis.deliveryemployee.app.base.BaseViewModel
 import com.neobis.deliveryemployee.databinding.FragmentFlowerDetailsBinding
 
 
 class FlowerDetailsFragment : BaseFragment<FragmentFlowerDetailsBinding>() {
 
+    override fun provideViewModel(): BaseViewModel? {
+        return null
+    }
     override fun inflateView(
         inflater: LayoutInflater,
         container: ViewGroup?
