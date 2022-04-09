@@ -39,7 +39,7 @@ val repositoryModule = module {
     }
     single {
         providePlantRepository(
-            restClient = get(),
+            restClient = get()
         )
     }
 

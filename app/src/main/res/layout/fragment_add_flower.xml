@@ -145,10 +145,10 @@
 
     <TextView
         android:layout_marginTop="20dp"
-        android:id="@+id/addcomment_tv"
+        android:id="@+id/addquantity_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Описание"
+        android:text="Количество"
         android:textAppearance="@style/loginTitle"
         android:textColor="@color/dark_grey"
         android:textSize="16sp"
@@ -160,14 +160,51 @@
     <EditText
         android:paddingStart="10dp"
         android:layout_marginTop="10dp"
-        android:lines="7"
+
+        android:inputType="textMultiLine"
+        android:id="@+id/addquantity_et"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/login_input_bg"
+        app:layout_constraintTop_toBottomOf="@+id/addquantity_tv" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/addsun_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Оcвещение"
+        android:textAppearance="@style/loginTitle"
+        android:textColor="@color/dark_grey"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/addplant_guideline"
+        app:layout_constraintTop_toBottomOf="@id/addquantity_et" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/addtempertature_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="@style/loginTitle"
+        android:textColor="@color/dark_grey"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/addplant_guideline"
+        app:layout_constraintTop_toBottomOf="@id/addquantity_et" />
+    <EditText
+        android:paddingStart="10dp"
+        android:layout_marginTop="10dp"
+        android:lines="3"
         android:inputType="textMultiLine"
         android:id="@+id/addcomment_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:background="@drawable/login_input_bg"
-        app:layout_constraintTop_toBottomOf="@+id/addcomment_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/addsun_tv" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/addplant_guideline"

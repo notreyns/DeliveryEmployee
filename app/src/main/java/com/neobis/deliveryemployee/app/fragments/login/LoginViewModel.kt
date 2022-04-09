@@ -20,7 +20,7 @@ class LoginViewModel(
         get() = _userRole
 
     fun login(phone: String, password: String) {
-        val user = UserModel("+996$phone", password)
+        val user = UserModel("+996${phone.trim()}", password.trim())
 
         loginUseCase.execute(viewModelScope, user) { result ->
             result.perform(
@@ -31,7 +31,7 @@ class LoginViewModel(
                     sharedPref.saveUserRole(it.role)
                     showToast("Пользователь успешно найден!", ToastDuration.SHORT)
                 }, {
-                    Log.d("login", it.message.toString())
+                    Log.d("login", it.message.toString() + it.localizedMessage)
                     showToast("Ошибка, повторите попытку! ${it.message}", ToastDuration.SHORT)
                 }
             )
