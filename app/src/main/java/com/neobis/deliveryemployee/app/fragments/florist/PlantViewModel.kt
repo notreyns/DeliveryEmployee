@@ -45,7 +45,7 @@ class PlantViewModel(
 
                     showToast("Растение успешно добавлено!", ToastDuration.SHORT)
                 }, {
-                    Log.d("plant", it.message.toString())
+                    Log.d("plant", it.message.toString() + it.localizedMessage)
                     showToast("Ошибка, повторите попытку!", ToastDuration.SHORT)
                 }
             )

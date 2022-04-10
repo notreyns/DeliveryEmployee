@@ -7,22 +7,47 @@ import com.neobis.deliveryclient.data.rest.client.RestClient
 import com.neobis.deliveryclient.domain.interactor.result.Result
 import com.neobis.deliveryemployee.domain.interactor.repository.PlantsRepository
 import com.neobis.deliveryemployee.domain.models.PlantItemModel
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import java.io.ByteArrayOutputStream
 
 
 class PlantsRepositoryImpl(private val restClient: RestClient) :
     PlantsRepository {
 
-    override fun createPlant(plantItem: PlantItemModel?): Result<Void> {
+    override fun createPlant(plantItem: PlantItemModel?): Result<PlantItemModel> {
         val bos = ByteArrayOutputStream()
         plantItem!!.bitmap.compress(Bitmap.CompressFormat.PNG, 100 /*ignored for PNG*/, bos);
         val byteArray = bos.toByteArray();
 
-        val stringBase64 = "data:image/png;base64,"+ Base64.encodeToString(byteArray, Base64.DEFAULT)
+        val stringBase64 = Base64.encodeToString(byteArray, Base64.DEFAULT)
         Log.d("base64", stringBase64)
+        val requestBody: RequestBody = MultipartBody.Builder()
+            .setType(MultipartBody.FORM)
+       /* @Field("category") category: Int,
+        @Field("picture") image: String,
+        @Field("price") price :Int,
+        @Field("name") name: String,
+        @Field("watering") water: String,
+        @Field("temperature") temp: String,
+        @Field("sun") sun: String,
+        @Field("quantity") quantity: Int,
+        @Field("is_easy") isEasy: Int*/
+
+            .addFormDataPart("category", "1")
+            .addFormDataPart("name", "param2222")
+            .addFormDataPart("price", "3400")
+            .addFormDataPart("quantity", "24")
+            .addFormDataPart("picture", stringBase64)
+            .addFormDataPart("watering", "param2")
+            .addFormDataPart("sun", "param2")
+            .addFormDataPart("temperature", "param2")
+            .addFormDataPart("is_easy", "1")
+            .build()
         return restClient.plantApiService().createPlant(
+            /*requestBody*/
             category = 1,
-            name = "testname",
+            name = "testname2",
             price = 3400,
             quantity = 24,
             image = stringBase64,

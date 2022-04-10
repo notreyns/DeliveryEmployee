@@ -7,8 +7,8 @@ import com.neobis.deliveryemployee.domain.models.PlantItemModel
 
 class CreatePlantUseCase(
     private val repository: PlantsRepository
-) : UseCase<Void, PlantItemModel>() {
-    override suspend fun doOnBackground(params: PlantItemModel?): Result<Void> {
+) : UseCase<PlantItemModel, PlantItemModel>() {
+    override suspend fun doOnBackground(params: PlantItemModel?): Result<PlantItemModel> {
         return repository.createPlant(params)
     }
 }
