@@ -8,14 +8,19 @@ import com.neobis.deliveryclient.data.rest.client.RestClient
 import com.neobis.deliveryclient.data.rest.client.RestClientImpl
 import com.neobis.deliveryclient.domain.interactor.repository.LoginRepository
 import com.neobis.deliveryclient.domain.interactor.usecase.login.LoginUseCase
+import com.neobis.deliveryemployee.app.fragments.courier.home.OrdersViewModel
 import com.neobis.deliveryemployee.app.fragments.florist.PlantViewModel
 import com.neobis.deliveryemployee.app.fragments.login.LoginViewModel
+import com.neobis.deliveryemployee.data.entity.mapper.mappers.PlantMapper
+import com.neobis.deliveryemployee.data.repository.OrdersRepositoryImpl
 import com.neobis.deliveryemployee.data.repository.PlantsRepositoryImpl
+import com.neobis.deliveryemployee.domain.interactor.repository.OrdersRepository
 import com.neobis.deliveryemployee.domain.interactor.repository.PlantsRepository
+import com.neobis.deliveryemployee.domain.interactor.usecase.courier.GetNewOrders
 import com.neobis.deliveryemployee.domain.interactor.usecase.florist.CreatePlantUseCase
+import com.neobis.deliveryemployee.domain.interactor.usecase.florist.GetListOfPlants
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 
@@ -30,6 +35,7 @@ val preferencesModule = module {
 val repositoryModule = module {
 
     single { tokenDataMapper() }
+    single { plantMapper() }
 
     single {
         provideUserRepository(
@@ -39,10 +45,16 @@ val repositoryModule = module {
     }
     single {
         providePlantRepository(
-            restClient = get()
+            restClient = get(),
+            mapper = get()
         )
     }
-
+    single {
+        provideOrdersRepository(
+            restClient = get(),
+            mapper = get()
+        )
+    }
 
 }
 
@@ -50,14 +62,21 @@ val viewModels = module {
 
     factory { provideLoginUseCase(repository = get()) }
     factory { provideCreatePlantUseCase(repository = get()) }
+    factory { provideGetPlantsUseCase(repository = get()) }
+    factory { provideGetNewOrdersUseCase(repository = get()) }
     single { provideSharedPreferences(androidContext()) }
 
+
     viewModel { LoginViewModel(loginUseCase = get(), get()) }
-    viewModel { PlantViewModel(createPlantUseCase = get()) }
+    viewModel { OrdersViewModel(get()) }
+    viewModel { PlantViewModel(createPlantUseCase = get(), getListOfPlants = get()) }
 }
+
 
 fun provideLoginUseCase(repository: LoginRepository) = LoginUseCase(repository)
 fun provideCreatePlantUseCase(repository: PlantsRepository) = CreatePlantUseCase(repository)
+fun provideGetPlantsUseCase(repository: PlantsRepository) = GetListOfPlants(repository)
+fun provideGetNewOrdersUseCase(repository: OrdersRepository) = GetNewOrders(repository)
 fun provideSharedPreferences(context: Context) = LocalDatabase(context)
 
 fun provideUserRepository(
@@ -69,8 +88,16 @@ fun provideUserRepository(
 
 fun providePlantRepository(
     restClient: RestClient,
+    mapper: PlantMapper
 ): PlantsRepository {
-    return PlantsRepositoryImpl(restClient)
+    return PlantsRepositoryImpl(restClient, mapper)
+}
+
+fun provideOrdersRepository(
+    restClient: RestClient,
+    mapper: PlantMapper
+): OrdersRepository {
+    return OrdersRepositoryImpl(restClient, mapper)
 }
 
 fun provideRestClient(): RestClient {
@@ -79,3 +106,4 @@ fun provideRestClient(): RestClient {
 
 
 fun tokenDataMapper() = JWTTokenMapper()
+fun plantMapper() = PlantMapper()

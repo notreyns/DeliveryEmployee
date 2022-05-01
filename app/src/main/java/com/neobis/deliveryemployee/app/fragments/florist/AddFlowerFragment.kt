@@ -16,8 +16,14 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.app.base.BaseViewModel
+import com.neobis.deliveryemployee.app.fragments.florist.utils.FileUtils
 import com.neobis.deliveryemployee.databinding.DialogSuccessPlatncreationBinding
 import com.neobis.deliveryemployee.databinding.FragmentAddFlowerBinding
+import id.zelory.compressor.Compressor
+import id.zelory.compressor.constraint.format
+import id.zelory.compressor.constraint.quality
+import id.zelory.compressor.constraint.resolution
+import id.zelory.compressor.constraint.size
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -73,7 +79,9 @@ class AddFlowerFragment : BottomSheetDialogFragment() {
 
         binding.addplantBtn.setOnClickListener {
             Log.d("plant", "clicklistenner")
-            viewModel.createPlant(bitmap!!, "test name", 1, 12, 423, "test desription")
+          val file = FileUtils.from(requireContext(), uri!!)
+
+            viewModel.createPlant(file, requireContext(), bitmap!!, "test name", 1, 12, 423, "test desription")
         }
         binding.addplantPhotoCard.setOnClickListener {
             selectImageFromGallery()

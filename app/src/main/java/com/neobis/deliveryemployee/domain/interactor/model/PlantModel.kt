@@ -1,9 +1,10 @@
 package com.neobis.deliveryemployee.domain.interactor.model
 
+import com.neobis.deliveryemployee.data.entity.florist.CategoryEntity
+
 data class PlantModel(
-    val categoryModel: CategoryModel,
+    val categoryModel: CategoryEntity,
     val date_created: String,
-    val description: String,
     val florist: Int,
     val id: Int,
     val is_sold: Boolean,

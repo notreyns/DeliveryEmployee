@@ -181,19 +181,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/addplant_guideline"
         app:layout_constraintTop_toBottomOf="@id/addquantity_et" />
-    <TextView
-        android:layout_marginTop="20dp"
-        android:id="@+id/addtempertature_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textAppearance="@style/loginTitle"
-        android:textColor="@color/dark_grey"
-        android:textSize="16sp"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/addplant_guideline"
-        app:layout_constraintTop_toBottomOf="@id/addquantity_et" />
     <EditText
         android:paddingStart="10dp"
         android:layout_marginTop="10dp"
@@ -205,6 +192,135 @@
         android:layout_marginHorizontal="16dp"
         android:background="@drawable/login_input_bg"
         app:layout_constraintTop_toBottomOf="@+id/addsun_tv" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/addtempertature_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Температура"
+        android:textAppearance="@style/loginTitle"
+        android:textColor="@color/dark_grey"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/addplant_guideline"
+        app:layout_constraintTop_toBottomOf="@id/addcomment_et" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/tempwinter_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Зимой"
+        android:textAppearance="@style/loginTitle"
+        android:textColor="@color/main_green"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/addplant_guideline"
+        app:layout_constraintTop_toBottomOf="@id/addtempertature_tv" />
+    <EditText
+        app:layout_constraintStart_toStartOf="@id/middle_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/tempwinter_et"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:background="@drawable/login_input_bg"
+        app:layout_constraintTop_toBottomOf="@+id/addtempertature_tv" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/tempsummer_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Летом"
+        android:textAppearance="@style/loginTitle"
+        android:textColor="@color/main_green"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/addplant_guideline"
+        app:layout_constraintTop_toBottomOf="@id/tempwinter_tv" />
+    <EditText
+        app:layout_constraintStart_toStartOf="@id/middle_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tempsummer_et"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:background="@drawable/login_input_bg"
+        app:layout_constraintTop_toBottomOf="@+id/tempwinter_et" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="100dp" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/addwatering_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Полив"
+        android:textAppearance="@style/loginTitle"
+        android:textColor="@color/dark_grey"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/addplant_guideline"
+        app:layout_constraintTop_toBottomOf="@id/tempsummer_tv" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/waterwinter_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Зимой"
+        android:textAppearance="@style/loginTitle"
+        android:textColor="@color/main_green"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/addplant_guideline"
+        app:layout_constraintTop_toBottomOf="@id/addwatering_tv" />
+    <EditText
+        app:layout_constraintStart_toStartOf="@id/middle_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/waterwinter_et"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:background="@drawable/login_input_bg"
+        app:layout_constraintTop_toBottomOf="@+id/addwatering_tv" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/watersummer_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Летом"
+        android:textAppearance="@style/loginTitle"
+        android:textColor="@color/main_green"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/addplant_guideline"
+        app:layout_constraintTop_toBottomOf="@id/waterwinter_tv" />
+    <EditText
+        app:layout_constraintStart_toStartOf="@id/middle_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/watersummer_et"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:background="@drawable/login_input_bg"
+        app:layout_constraintTop_toBottomOf="@+id/waterwinter_et" />
+
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/addplant_guideline"
@@ -224,8 +340,9 @@
         android:textAllCaps="false"
         android:layout_height="50dp"
         android:text="Добавить растение"
-        app:layout_constraintTop_toBottomOf="@+id/addcomment_et"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/watersummer_tv"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

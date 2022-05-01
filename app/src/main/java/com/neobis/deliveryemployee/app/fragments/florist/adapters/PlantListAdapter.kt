@@ -7,16 +7,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.neobis.deliveryemployee.R
 import com.neobis.deliveryemployee.databinding.CardPlantItemBinding
+import com.neobis.deliveryemployee.domain.interactor.model.PlantModel
 import com.neobis.deliveryemployee.domain.models.PlantItemModel
 
 
 class PlantListAdapter : RecyclerView.Adapter<PlantListAdapter.PlantItemViewHolder>() {
 
-    var onPlantClickListener: ((PlantItemModel) -> Unit)? = null
+    var onPlantClickListener: ((PlantModel) -> Unit)? = null
 
-    private var plantList: List<PlantItemModel> = listOf()
+    private var plantList: List<PlantModel> = mutableListOf()
 
-    fun setList(list: List<PlantItemModel>) {
+    fun setList(list: List<PlantModel>) {
         this.plantList = list.toMutableList()
         notifyDataSetChanged()
     }
@@ -35,18 +36,18 @@ class PlantListAdapter : RecyclerView.Adapter<PlantListAdapter.PlantItemViewHold
         val plantItem = plantList[position]
         holder.binding.apply {
             cardPlantCateg.text = String.format(
-                cardPlantCateg.context.getString(R.string.category_plant), plantItem.category
+                cardPlantCateg.context.getString(R.string.category_plant), plantItem.categoryModel.name
             )
             cardPlantName.text = plantItem.name
-            cardPlantPrice.text = plantItem.price.toString()
+            cardPlantPrice.text = plantItem.price.toString() + " c"
             val quantityStr = String.format(
                 cardPlantQuantity.context.getString(R.string.quantity_plant),
                 plantItem.quantity
             )
 
             cardPlantQuantity.text = Html.fromHtml(quantityStr)
-          /*  Glide.with(holder.itemView.context).load(plantItem.image)
-                .into(holder.binding.cardPlantImg)*/
+            Glide.with(holder.itemView.context).load(plantItem.picture)
+                .into(holder.binding.cardPlantImg)
         }
 
         holder.itemView.setOnClickListener {

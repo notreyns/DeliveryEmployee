@@ -4,7 +4,6 @@ package com.neobis.deliveryemployee.data.entity.florist
 data class PlantEntity(
     val category: CategoryEntity,
     val date_created: String,
-    val description: String,
     val florist: Int,
     val id: Int,
     val is_sold: Boolean,

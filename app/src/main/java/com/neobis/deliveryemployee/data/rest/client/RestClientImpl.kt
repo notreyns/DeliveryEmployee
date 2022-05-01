@@ -4,12 +4,14 @@ import com.google.gson.GsonBuilder
 import com.neobis.deliveryclient.data.Constants
 import com.neobis.deliveryclient.data.rest.api.UserApi
 import com.neobis.deliveryclient.data.rest.callAdapterFactory.ResultCallAdapterFactory
+import com.neobis.deliveryemployee.data.rest.api.OrdersApi
 import com.neobis.deliveryemployee.data.rest.api.PlantsApi
 import com.neobis.deliveryemployee.data.rest.client.ValidateInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.util.concurrent.TimeUnit
 
 class RestClientImpl : RestClient {
@@ -34,6 +36,7 @@ class RestClientImpl : RestClient {
             .baseUrl(Constants.BASE_URL)
             .addCallAdapterFactory(ResultCallAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create(gson))
+            .addConverterFactory(ScalarsConverterFactory.create())
             .client(httpClient.build())
             .build()
     }
@@ -44,6 +47,10 @@ class RestClientImpl : RestClient {
 
     override fun plantApiService(): PlantsApi {
         return retrofit.create(PlantsApi::class.java)
+    }
+
+    override fun ordersApiService(): OrdersApi {
+        return retrofit.create(OrdersApi::class.java)
     }
 
 

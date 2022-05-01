@@ -45,6 +45,4 @@ class FlowerDetailsFragment : BaseFragment<FragmentFlowerDetailsBinding>() {
         activity?.findViewById<BottomNavigationView>(R.id.bottomnavigationbar)?.visibility = View.VISIBLE
         activity?.findViewById<FloatingActionButton>(R.id.fab)?.visibility = View.VISIBLE
     }
-
-
 }

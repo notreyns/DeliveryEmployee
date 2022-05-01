@@ -1,27 +1,51 @@
 package com.neobis.deliveryemployee.app.fragments.florist
 
 import android.content.Context
-import android.database.Cursor
 import android.graphics.Bitmap
-import android.net.Uri
-import android.provider.MediaStore
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.neobis.deliveryclient.app.model.toast.ToastDuration
 import com.neobis.deliveryemployee.app.base.BaseViewModel
+import com.neobis.deliveryemployee.domain.interactor.model.PlantModel
 import com.neobis.deliveryemployee.domain.interactor.usecase.florist.CreatePlantUseCase
+import com.neobis.deliveryemployee.domain.interactor.usecase.florist.GetListOfPlants
 import com.neobis.deliveryemployee.domain.models.PlantItemModel
-import java.io.ByteArrayOutputStream
+import id.zelory.compressor.Compressor
+import id.zelory.compressor.constraint.format
+import id.zelory.compressor.constraint.quality
+import id.zelory.compressor.constraint.size
+import kotlinx.coroutines.launch
 import java.io.File
-import java.io.FileOutputStream
 
 
 class PlantViewModel(
     private val createPlantUseCase: CreatePlantUseCase,
+    private val getListOfPlants: GetListOfPlants
 ) : BaseViewModel() {
 
+    private var _plantsList = MutableLiveData<List<PlantModel>>()
+    val plants: LiveData<List<PlantModel>> = _plantsList
+
+    fun getListOfPlants() {
+        getListOfPlants.execute(viewModelScope) { result ->
+            showLoading()
+            result.perform(
+                {
+                    hideLoading()
+                    _plantsList.value = it
+                },
+                {
+                    Log.d("plant", it.message.toString())
+                }
+            )
+        }
+    }
 
     fun createPlant(
+        file: File,
+        context: Context,
         bitmap: Bitmap,
         name: String,
         category: Int,
@@ -29,37 +53,26 @@ class PlantViewModel(
         price: Int,
         description: String,
     ) {
-       /* val f = File(mycontext.cacheDir, "testname");
-        f.createNewFile();*/
+        viewModelScope.launch {
+            val compressedImageFile = Compressor.compress(context, file) {
+                quality(30)
+                format(Bitmap.CompressFormat.PNG)
+            }
+            val plant =
+                PlantItemModel(compressedImageFile, bitmap, name, 1, quantity, price, description)
+            createPlantUseCase.execute(viewModelScope, plant) { result ->
+                result.perform(
+                    {
+                        Log.d("plant", "успешно")
 
-        /*val fos = FileOutputStream(f);
-        fos.write(bitmapdata);
-        fos.flush()
-        fos.close()*/
-
-        val plant = PlantItemModel(bitmap, name, 1, quantity, price, description)
-        createPlantUseCase.execute(viewModelScope, plant) { result ->
-            result.perform(
-                {
-                    Log.d("plant", "успешно")
-
-                    showToast("Растение успешно добавлено!", ToastDuration.SHORT)
-                }, {
-                    Log.d("plant", it.message.toString() + it.localizedMessage)
-                    showToast("Ошибка, повторите попытку!", ToastDuration.SHORT)
-                }
-            )
+                        showToast("Растение успешно добавлено!", ToastDuration.SHORT)
+                    }, {
+                        Log.d("plant", it.message.toString() + it.localizedMessage)
+                        showToast("Ошибка, повторите попытку!", ToastDuration.SHORT)
+                    }
+                )
+            }
         }
     }
 
-    fun getPath(uri: Uri, context: Context): String? {
-        val projection = arrayOf(MediaStore.Images.Media.DATA)
-        val cursor: Cursor =
-            context.getContentResolver().query(uri, projection, null, null, null) ?: return null
-        val column_index: Int = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
-        cursor.moveToFirst()
-        val s: String = cursor.getString(column_index)
-        cursor.close()
-        return s
-    }
 }

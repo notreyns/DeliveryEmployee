@@ -26,9 +26,10 @@ class LoginViewModel(
             result.perform(
                 {
                     _userRole.value = it.role
-                    /* sharedPref.saveAccessToken(it.access)
-                     sharedPref.saveRefreshToken(it.refresh)*/
+                    sharedPref.saveAccessToken(it.access)
+                    sharedPref.saveRefreshToken(it.refresh)
                     sharedPref.saveUserRole(it.role)
+
                     showToast("Пользователь успешно найден!", ToastDuration.SHORT)
                 }, {
                     Log.d("login", it.message.toString() + it.localizedMessage)
@@ -45,6 +46,4 @@ class LoginViewModel(
             _userRole.postValue(sharedPref.fetchUserRole())
         }
     }
-
-
 }

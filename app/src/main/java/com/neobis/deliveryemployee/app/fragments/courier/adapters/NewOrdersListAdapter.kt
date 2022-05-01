@@ -5,16 +5,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.neobis.deliveryemployee.databinding.CardNewCourierOrderItemBinding
+import com.neobis.deliveryemployee.domain.interactor.model.OrderModel
 import com.neobis.deliveryemployee.domain.models.CourierNewOrderModel
 import com.neobis.deliveryemployee.domain.models.PlantItemModel
 
 
 class NewOrdersListAdapter : RecyclerView.Adapter<NewOrdersListAdapter.NewOrderItemViewHolder>() {
-    var onOrderClickListener: ((CourierNewOrderModel) -> Unit)? = null
+    var onOrderClickListener: ((OrderModel) -> Unit)? = null
 
-    var orderList = listOf<CourierNewOrderModel>()
+    var orderList = listOf<OrderModel>()
         set(value) {
             field = value
+            notifyDataSetChanged()
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewOrderItemViewHolder {
@@ -30,11 +32,11 @@ class NewOrdersListAdapter : RecyclerView.Adapter<NewOrdersListAdapter.NewOrderI
     override fun onBindViewHolder(holder: NewOrderItemViewHolder, position: Int) {
         val historyItem = orderList[position]
         holder.binding.apply {
-            idNewOrder.text = historyItem.id
-            curoderFloristAddressTv.text = historyItem.floristAddress
-            curorderCustomeradressTv.text= historyItem.clientAddress
-            neworderPrice.text = historyItem.price
-
+            idNewOrder.text = "Заказ №" + historyItem.id.toString()
+            curoderFloristAddressTv.text = "Советская 111"
+            curorderCustomeradressTv.text = historyItem.address
+            neworderPrice.text = "10"+historyItem.total_price.toString() + " coм"
+            dateNew.text = historyItem.date_created.substring(0, 10)
         }
         holder.binding.root.setOnClickListener {
             onOrderClickListener?.invoke(historyItem)
